@@ -1,0 +1,102 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Customer Sign up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+<ion-list>
+  <ion-item-divider color="danger">Details Informations Personelles</ion-item-divider>
+
+  <ion-item>
+    <ion-label>First Name</ion-label>
+    <ion-input type="text" [(ngModel)]="newsUser.first_name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label>Last Name</ion-label>
+      <ion-input type="text" [(ngModel)]="newsUser.last_name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="newsUser.email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Username</ion-label>
+          <ion-input type="text" [(ngModel)]="newsUser.username"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Password</ion-label>
+            <ion-input type="password" [(ngModel)]="newsUser.password"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label>Confirm Password</ion-label>
+              <ion-input type="password" [(ngModel)]="newsUser.confirm_password"></ion-input>
+            </ion-item>
+
+   <ion-item-divider color="danger">Billing Details</ion-item-divider>
+
+   <ion-item>
+      <ion-label>Address Line 1</ion-label>
+      <ion-textarea type="text" maxlength="80" [(ngModel)]="newsUser.billing_address.address_1"></ion-textarea>
+    </ion-item>
+    <ion-item>
+        <ion-label>Address Line 2</ion-label>
+        <ion-textarea type="text" maxlength="80" [(ngModel)]="newsUser.billing_address.address_2"></ion-textarea>
+      </ion-item>
+      <ion-item>
+          <ion-label>Country</ion-label>
+          <ion-select [(ngModel)]="newsUser.billing_address.country">
+          <ion-option value="Senegal"  selected="true">Senegal</ion-option>
+        </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Région</ion-label>
+            <ion-select [(ngModel)]="newsUser.billing_address.state">
+            <ion-option value="Dakar"  >Dakar</ion-option>
+            <ion-option value="St louis"  >St louis</ion-option>
+            <ion-option value="Thiès"  >Thiès</ion-option>
+            <ion-option value="Diourbel" >Diourbel</ion-option>
+            <ion-option value="Touba" >Touba</ion-option>
+           </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Ville</ion-label>
+            <ion-input type="text"  [(ngModel)]="newsUser.billing_address.city"></ion-input>
+        </ion-item>
+              <ion-item>
+                  <ion-label>Phone</ion-label>
+                  <ion-input type="tel" clearInput [(ngModel)]="newsUser.billing_address.phone"></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>Same Shipping Details</ion-label>
+                <ion-checkbox (ionchange)="setBillingToShop()"></ion-checkbox>
+              </ion-item>
+          <ion-item-divider color="danger" *ngIf="!billing_shopping_same">Détails Shopping</ion-item-divider>
+        
+          <!-- <ion-item item *ngIf="!billing_shopping_same">
+            <ion-label>Address Line 1</ion-label>
+            <ion-textarea type="text" maxlength="80" [(ngModel)]="shipping_address_address_1"></ion-textarea>
+          </ion-item>
+
+          <ion-item item *ngIf="!billing_shopping_same">
+              <ion-label>Address Line 2</ion-label>
+              <ion-textarea type="text" maxlength="80" [(ngModel)]="shipping_address_address_2"></ion-textarea>
+            </ion-item> -->
+
+</ion-list>
+</ion-content>
+<ion-footer>
+  <button ion-button block color="danger" (click)="signup()">Sign Up</button>
+</ion-footer>

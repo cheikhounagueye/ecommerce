@@ -1,0 +1,14 @@
+{
+  "name": "woocommerce",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/wc-api",
+      "proxyUrl": "htpp:www.sentoubagroup.com"
+    }
+  ],
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
